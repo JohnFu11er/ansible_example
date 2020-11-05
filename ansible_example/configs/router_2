@@ -1,0 +1,28 @@
+hostname router_2
+!
+FastEthernet0/0
+ ip address 192.168.0.201 255.255.255.0
+ description WAN CONNECTION
+ speed 100
+ duplex full
+!
+FastEthernet0/1
+ ip address 192.168.0.202 255.255.255.0
+ description SERVER CONNECTION
+ speed 100
+ duplex full
+!
+FastEthernet0/2
+ ip address 192.168.0.203 255.255.255.0
+ description LAN CONNECTION
+ speed 10
+ duplex half
+!
+ip route 0.0.0.0 0.0.0.0 192.168.0.203
+ip route 1.1.1.1 0.0.0.0 10.0.0.1
+!
+router eigrp 1
+ network 192.168.2.0 0.0.0.255
+ network 10.0.2.0 0.0.0.255
+ network 172.16.0.0 0.0.255.255
+ no autosummary

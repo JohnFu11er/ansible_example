@@ -1,0 +1,16 @@
+---
+  - name: test playbook
+    hosts: routers
+    gather_facts: no
+    connection: network_cli
+
+    tasks:
+      - name: create folder
+        file:
+          path: ./configs
+          state: directory
+      
+      - name: create files
+        template:
+          src: ./templates/main.j2
+          dest: ./configs/{{ inventory_hostname }}

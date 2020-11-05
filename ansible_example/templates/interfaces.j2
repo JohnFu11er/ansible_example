@@ -1,0 +1,8 @@
+{% for interface in interfaces.keys() %}
+{{ interface }}
+ ip address {{ interfaces [interface]['ip_address'] }}
+ description {{ interfaces [interface]['description'] }}
+ speed {{ interfaces [interface]['speed'] }}
+ duplex {{ interfaces [interface]['duplex'] }}
+!
+{% endfor %}

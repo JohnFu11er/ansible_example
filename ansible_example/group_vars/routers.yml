@@ -1,0 +1,3 @@
+ansible_network_os: ios
+ansible_user: john
+ansible_ssh_pass: password

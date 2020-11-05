@@ -1,0 +1,5 @@
+hostname {{ inventory_hostname }}
+!
+{% include 'interfaces.j2' %}
+{% include 'static_routes.j2' %}
+{% include 'eigrp.j2' %}
